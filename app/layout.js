@@ -2,7 +2,8 @@ import { Inter,Luckiest_Guy } from "next/font/google";
 import "./globals.css";
 import NavBar from "@/components/NavBar";
 
-const luckiestGuy = Luckiest_Guy({ subsets: ["latin"],
+const luckiestGuy = Luckiest_Guy({ 
+  subsets: ["latin"],
   variable:"--font-luckiest-guy",
   weight: "400"
  });
