@@ -1,4 +1,4 @@
-import ClientComponent from "@/components/ClientComponent";
+import ClientComponent from "@/concept-related/ClientComponent";
 
 function SerrverPage() {
     console.log("Hello i've been render on the server");
