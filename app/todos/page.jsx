@@ -1,12 +1,12 @@
+import DeleteTodo from "@/components/DeleteTodo";
+
 async function TodosPage() {
   const response = await fetch("http://localhost:3000/api/todos", {
     next: {
-      revalidate: 10,
+      revalidate: 1,
     },
   });
   const data = await response.json();
-
-  console.log("data: ", data);
 
   return (
     <section className="mt-24 w-full h-full flex justify-center">
@@ -27,7 +27,7 @@ async function TodosPage() {
               <td className="py-3 px-6">{todo.id}</td>
               <td className="py-3 px-6">{todo.name}</td>
               <td className="py-3 px-6">
-                <button>Delete</button>
+                <DeleteTodo id={todo.id} />
               </td>
             </tr>
           ))}

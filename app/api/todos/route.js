@@ -14,7 +14,6 @@ export async function DELETE(request) {
   const data = await request.json();
   todos=todos.filter((todo)=>todo.id !== data.id);
 
-  console.log("debug", todos);
   return NextResponse.json({todos});
 
 }
