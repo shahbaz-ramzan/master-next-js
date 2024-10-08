@@ -19,8 +19,7 @@ async function TodosPage() {
           </tr>
         </thead>
         <tbody className="text-gray-600 text-sm font-light">
-          {data?.todos?.map((todo) => {
-            {console.log(todo)}
+          {data?.todos?.map((todo) => (
             <tr
               key={todo.id}
               className="border-b border-gray-200 hover:bg-gray-100"
@@ -30,8 +29,8 @@ async function TodosPage() {
               <td className="py-3 px-6">
                 <button>Delete</button>
               </td>
-            </tr>;
-          })}
+            </tr>
+          ))}
         </tbody>
       </table>
     </section>
