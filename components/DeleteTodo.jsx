@@ -15,6 +15,7 @@ function DeleteTodo({ id }) {
 
     if (response.status == "200") {
       router.refresh();
+      router.push("/")
     } else {
       throw new Error("Something went wrong");
     }

@@ -1,4 +1,5 @@
 import DeleteTodo from "@/components/DeleteTodo";
+import Link from "next/link";
 
 async function TodosPage() {
   const response = await fetch("http://localhost:3000/api/todos", {
@@ -24,7 +25,11 @@ async function TodosPage() {
               key={todo.id}
               className="border-b border-gray-200 hover:bg-gray-100"
             >
-              <td className="py-3 px-6">{todo.id}</td>
+              <td className="py-3 px-6">
+                <Link href={`/todos/${todo.id}`}>
+                {todo.id}
+                </Link>
+                </td>
               <td className="py-3 px-6">{todo.name}</td>
               <td className="py-3 px-6">
                 <DeleteTodo id={todo.id} />
