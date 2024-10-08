@@ -12,21 +12,20 @@ export async function GET() {
 
 export async function DELETE(request) {
   const data = await request.json();
-  todos=todos.filter((todo)=>todo.id !== data.id);
+  todos = todos.filter((todo) => todo.id !== data.id);
 
-  return NextResponse.json({todos});
-
+  return NextResponse.json({ todos });
 }
 
-export async function PUT(request)  {
-    const data = await request.json();
-    const updatedTodos = todos.map((todo)=>todo.id === data.id? data : todo);
-    return NextResponse.json({ updatedTodos });
-  }
+export async function PUT(request) {
+  const data = await request.json();
+  const updatedTodos = todos.map((todo) => (todo.id === data.id ? data : todo));
+  return NextResponse.json({ updatedTodos });
+}
 
-  export async function POST(request) {
-    const data = await request.json();
-    const newData = {id:todos.length + 1 , name:data.name}
-    todos.push(newData);
-    return NextResponse.json({ todos });
-  }
+export async function POST(request) {
+  const data = await request.json();
+  const newData = { id: todos.length + 1, name: data.name };
+  todos.push(newData);
+  return NextResponse.json({ todos });
+}
