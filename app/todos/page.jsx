@@ -26,10 +26,8 @@ async function TodosPage() {
               className="border-b border-gray-200 hover:bg-gray-100"
             >
               <td className="py-3 px-6">
-                <Link href={`/todos/${todo.id}`}>
-                {todo.id}
-                </Link>
-                </td>
+                <Link href={`/todos/${todo.id}`}>{todo.id}</Link>
+              </td>
               <td className="py-3 px-6">{todo.name}</td>
               <td className="py-3 px-6">
                 <DeleteTodo id={todo.id} />
